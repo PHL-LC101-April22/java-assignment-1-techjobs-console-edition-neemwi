@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.sql.SQLOutput;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -62,10 +60,14 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
+                    searchTerm = searchTerm.toLowerCase();
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
+                    searchTerm = searchTerm.toLowerCase();
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+
                 }
+
             }
         }
     }
@@ -119,7 +121,55 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+//
+//        for (int i = 0; i < someJobs.size(); i++) {
+//            if (someJobs.size() == 0) {
+//                System.out.print("No Results");
+//                return;
+//            } else {
+//                for (HashMap<String, String> row : someJobs) {
+//                    System.out.println("*****");
+//
+//                    for (String key : row.keySet()) {
+//                        System.out.println(key + ": " + row.get(key));
+//                    }
+//
+//                    System.out.println("*****");
+//                }
+//            }
+//            System.out.println("*****" + "\n" + someJobs.get(i));
+//
+//        }
 
-        System.out.println("printJobs is not implemented yet");
+//
+//        if (someJobs.size() == 0) {
+//            System.out.print("No Results");
+//            return;
+//        }
+//
+//        for(HashMap<String, String> columnChoices : someJobs) { // arraylist of jobs
+//            System.out.println("******");
+//            for (Map.Entry<String, String> columnDetails : columnChoices.entrySet()) {// key = core competency
+//                // look at the key set of the column choices
+//                System.out.println(columnDetails.getKey() + ": " + columnDetails.getValue());
+//            }
+//            System.out.println("******\n");
+//        }
+//    }
+
+
+        //System.out.println("printJobs is not implemented yet");
+        if (someJobs.size() == 0) {
+            System.out.print("No Results");
+        } else {
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println("\n*****");
+                for (Map.Entry<String, String> entry : job.entrySet()) {
+                    System.out.println(entry.getKey() + ": " + entry.getValue());
+                }
+                System.out.println("*****");
+            }
+        }
     }
+
 }
