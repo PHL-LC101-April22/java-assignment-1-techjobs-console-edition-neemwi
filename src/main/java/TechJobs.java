@@ -126,20 +126,7 @@ public class TechJobs {
 //            if (someJobs.size() == 0) {
 //                System.out.print("No Results");
 //                return;
-//            } else {
-//                for (HashMap<String, String> row : someJobs) {
-//                    System.out.println("*****");
 //
-//                    for (String key : row.keySet()) {
-//                        System.out.println(key + ": " + row.get(key));
-//                    }
-//
-//                    System.out.println("*****");
-//                }
-//            }
-//            System.out.println("*****" + "\n" + someJobs.get(i));
-//
-//        }
 
 //
 //        if (someJobs.size() == 0) {
